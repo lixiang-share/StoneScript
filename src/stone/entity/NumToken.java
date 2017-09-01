@@ -3,7 +3,7 @@ package stone.entity;
 public class NumToken extends Token {
 	private int value;
 	
-	protected NumToken(int lineNum, int val) {
+	public NumToken(int lineNum, int val) {
 		super(lineNum);
 		this.value = val;
 	}

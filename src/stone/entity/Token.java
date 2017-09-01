@@ -5,7 +5,7 @@ import stone.exception.StoneException;
 public abstract class Token {
 
 	public static final Token EOF = new Token(-1){};
-	protected static final String EOL = "\\n";
+	public static final String EOL = "\\n";
 	private int lineNumber = -1;
 	
 	protected Token(int lineNum){

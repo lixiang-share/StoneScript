@@ -4,7 +4,7 @@ public class StrToken extends Token {
 
 	private String value;
 	
-	protected StrToken(int lineNum, String val) {
+	public StrToken(int lineNum, String val) {
 		super(lineNum);
 		this.value = val;
 	}

@@ -4,7 +4,7 @@ public class IdToken extends Token {
 
 	private String value;
 	
-	protected IdToken(int lineNum,String val) {
+	public IdToken(int lineNum,String val) {
 		super(lineNum);
 		this.value = val;
 	}

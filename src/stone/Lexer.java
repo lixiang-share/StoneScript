@@ -20,11 +20,11 @@ public class Lexer {
 	 * 然而java中String想要表达字面量"\"也需要"\\"
 	 * 所以通过字符串在写正则想要表达"\"字面量，就需要"\\\\"
 	 */
-	private static final String patStr = "(\\\\\"|\\\\\\\\|\\n|[^\"])*";
+	private static final String patStr = "\"(\\\\\"|\\\\\\\\|\\\\n|[^\"])*\"";
 	private static final String patId = "[A-Z_a-z][A-Z_a-z0-9]*|==|<=|>=|&&|\\|\\||\\p{Punct}";
 	private static final String patNote = "//.*";
 	private static final String patRaw = "\\s*((%s)|(%s)|(%s)|(%s))?";
-	public static String patLexer = String.format(patRaw,new Object[]{patNote, patNum,patId,patStr});
+	public static String patLexer = String.format(patRaw,new Object[]{patNote, patNum,patStr,patId});
 	public static Pattern pattern = Pattern.compile(patLexer); 
 	
 	private LineNumberReader reader;
@@ -97,9 +97,9 @@ public class Lexer {
 			if(matcher.group(3) != null){
 				token = new NumToken(lineNo,Integer.parseInt(m)); 
 			}else if(matcher.group(4) != null){
-				token = new IdToken(lineNo,m);
-			}else{
 				token = new StrToken(lineNo,m); 
+			}else{
+				token = new IdToken(lineNo,m);
 			}
 			queue.add(token);
 		}

@@ -18,7 +18,7 @@ public class IdToken extends Token {
 	public boolean isString() {
 		return super.isString();
 	}
-	public int getNumber() throws Exception {
+	public int getNumber(){
 		return super.getNumber();
 	}
 

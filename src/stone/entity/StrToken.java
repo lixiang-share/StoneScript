@@ -21,7 +21,7 @@ public class StrToken extends Token {
 		return super.isNumber();
 	}
 
-	public int getNumber() throws Exception {
+	public int getNumber() {
 		return super.getNumber();
 	}
 

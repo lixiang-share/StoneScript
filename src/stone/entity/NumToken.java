@@ -21,7 +21,7 @@ public class NumToken extends Token {
 	public boolean isNumber() {
 		return true;
 	}
-	public int getNumber() throws Exception {
+	public int getNumber(){
 		return this.value;
 	}
 	public String getText() {

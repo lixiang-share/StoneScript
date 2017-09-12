@@ -24,8 +24,8 @@ public abstract class Token {
 	public boolean isString(){
 		return false;
 	}
-	public int getNumber() throws Exception{
-		throw new StoneException("No Number Token");
+	public int getNumber(){
+		return 0;
 	}
 	public String getText(){
 		return "";
